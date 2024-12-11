@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RoF Link Simulator</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <h1>Radio Over Fiber (RoF) Link Simulator</h1>
+
+  <div class="link-config">
+    <label for="modulation-type">Choose Modulation Type:</label>
+    <select id="modulation-type">
+      <option value="direct">Direct Modulation</option>
+      <option value="external">External Modulation</option>
+    </select>
+
+    <label for="fiber-length">Fiber Length (km):</label>
+    <input type="number" id="fiber-length" value="10" min="1">
+
+    <label for="laser-power">Laser Power (mW):</label>
+    <input type="number" id="laser-power" value="5" min="1">
+
+    <label for="noise-level">Noise Level (dB):</label>
+    <input type="number" id="noise-level" value="1" min="0">
+
+    <button onclick="simulateLink()">Simulate</button>
+  </div>
+
+  <div id="simulation-result"></div>
+  <canvas id="performanceChart" width="400" height="200"></canvas>
+
+  <div id="network-visualization"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
